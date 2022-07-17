@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "jua", serif;
+        color: #fff;
+      }
+      .backwall {
+        position: absolute;
+        background: #000;
+        opacity: 0.5;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+      }
+      .content {
+        position: absolute;
+        z-index: 3;
+        height: 100vh;
+        width: 100vw;
+      }
+      .container_userInfo {
+        padding: 10px 10px;
+        background: #000;
+        display: flex;
+        justify-content: end;
+        background-color: transparent;
+        z-index: 1000;
+      }
+      #greeting {
+        z-index: 100;
+        color: white;
+      }
+      .container_clock_quote {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        flex-direction: column;
+      }
+      #quote {
+        font-size: 20px;
+      }
+      #weather {
+        font-size: 20px;
+        padding: 10px;
+      }
+      #todo {
+        color: #000;
+      }
+      .container_todo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-size: 60px;
+        flex-direction: column;
+        text-align: right;
+      }
+      #todo-list {
+        list-style: none;
+        font-size: 15px;
+      }
+    </style>
+    <title>Momentum App</title>
+  </head>
+  <body>
+    <div class="backwall"></div>
+    <div class="content">
+      <div class="container_userInfo">
+        <form class="hidden" id="login-form">
+          <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="What is your name?"
+          />
+          <input type="submit" value="Log In" />
+        </form>
+        <h1 class="hidden" id="greeting"></h1>
+      </div>
+      <div class="container_clock_quote">
+        <img
+          id="weather_icon"
+          style="display: none"
+          alt=""
+          class="src"
+          width="100"
+        />
+        <div id="weather">
+          <span></span>
+          <span></span>
+        </div>
+        <div><h2 id="clock">00:00:00</h2></div>
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="container_todo">
+        <form id="todo-form">
+          <input
+            id="todo"
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+            required
+          />
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>
