@@ -12,7 +12,7 @@
         font-family: "jua", serif;
         color: #fff;
       }
-      #login-form {
+      #login-form input[type="text"] {
         color: #000;
       }
       .backwall {
@@ -75,6 +75,12 @@
         list-style: none;
         font-size: 15px;
       }
+      #btn_login {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 0 10px;
+      }
     </style>
     <title>My Desk</title>
   </head>
@@ -89,7 +95,7 @@
             type="text"
             placeholder="What is your name?"
           />
-          <input type="submit" value="Log In" />
+          <input type="submit" value="Log In" id="btn_login" />
         </form>
         <h1 class="hidden" id="greeting"></h1>
       </div>
